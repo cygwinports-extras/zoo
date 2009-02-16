@@ -1,0 +1,6 @@
+category: Archive
+requires: cygwin
+sdesc: "Lempel-Ziv compression utility"
+ldesc: "Zoo is used to create and maintain collections of files in compressed
+form.  It uses a Lempel-Ziv compression algorithm that gives space sav-
+ings in the range of 20% to 80% depending on the type of file data."

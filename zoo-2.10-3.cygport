@@ -1,0 +1,25 @@
+DESCRIPTION="Lempel-Ziv compression utility"
+HOMEPAGE="ftp://ftp.kiarchive.ru/pub/unix/arcers"
+SRC_URI="ftp://ftp.kiarchive.ru/pub/unix/arcers/${P}pl1.tar.gz"
+PATCH_URI="
+	mirror://gentoo/${P}-gcc-issues-fix.patch
+	mirror://portage/app-arch/${PN}/files/${P}-CAN-2005-2349.patch
+	mirror://portage/app-arch/${PN}/files/${P}-febz-183426.patch
+	mirror://portage/app-arch/${PN}/files/${P}-security_pathsize.patch
+	mirror://portage/app-arch/${PN}/files/${P}-multiple-dos-fix.patch
+	mirror://portage/app-arch/${PN}/files/${P}-gentoo-fbsd.patch
+"
+
+SRC_DIR="."
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygmake linux
+}
+
+src_install() {
+	cd ${B}
+	dobin *.exe
+	doman *.1
+}
